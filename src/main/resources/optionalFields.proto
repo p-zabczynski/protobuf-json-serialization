@@ -1,0 +1,15 @@
+syntax = "proto3";
+package se.tink;
+option java_package = "se.tink.protobuf.optional";
+option java_outer_classname = "TinkProtoOptionalFields";
+
+message OptionalObject {
+  int64 id = 1;
+  string name = 2;
+  optional OptionalComplexValue complexValue = 3;
+}
+
+message OptionalComplexValue {
+ string name = 1;
+ string type = 2;
+}

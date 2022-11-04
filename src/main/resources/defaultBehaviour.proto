@@ -1,0 +1,15 @@
+syntax = "proto3";
+package se.tink;
+option java_package = "se.tink.protobuf.default_behaviour";
+option java_outer_classname = "TinkProtoDefault";
+
+message DefaultObject {
+  int64 id = 1;
+  string name = 2;
+  DefaultComplexValue complexValue = 3;
+}
+
+message DefaultComplexValue {
+  string name = 1;
+  string type = 2;
+}

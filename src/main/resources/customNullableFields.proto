@@ -1,0 +1,32 @@
+syntax = "proto3";
+package se.tink;
+import "google/protobuf/struct.proto";
+
+option java_multiple_files = true;
+option java_package = "se.tink.protobuf.custom";
+option java_outer_classname = "TinkProtoCustomNullable";
+
+message CustomNullableObject {
+  int64 id = 1;
+  string name = 2;
+  NullableComplexValue complexValue = 3;
+}
+
+message ComplexValue {
+  string name = 1;
+  string type = 2;
+}
+
+message NullableString {
+  oneof kind {
+    google.protobuf.NullValue null = 1;
+    string data = 2;
+  }
+}
+
+message NullableComplexValue {
+  oneof kind {
+    google.protobuf.NullValue null = 1;
+    ComplexValue complexValue = 2;
+  }
+}
